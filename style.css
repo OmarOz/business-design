@@ -1,0 +1,419 @@
+body {
+  background-color: hsl(233, 47%, 7%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Lexend Deca";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: absolute;
+  top: calc(50% - (446px / 2));
+  left: calc(50% - (1050px / 2));
+  border-radius: 10px;
+  background-color: hsl(244, 38%, 16%);
+  display: flex;
+  justify-content: space-between;
+  width: 1050px;
+  height: 446px;
+  overflow: hidden;
+  transform: perspective(0px) translate3d(0, 0, 0);
+  transform-origin: center;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(1, 0.47, 0, 0.74);
+}
+
+.container:hover {
+  transform: perspective(0px) translate3d(0, 0, 0.02px);
+  transform-origin: center;
+}
+
+.container .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* .container .text div{
+    padding: 0 36px;
+} */
+
+.heading,
+.description,
+.ctq {
+  padding: 0 100px 0 45px;
+}
+.description {
+  padding-right: 158px;
+}
+
+.container .text .heading {
+  font-family: "Inter";
+  font-weight: 700;
+}
+
+.container .text .heading span {
+  animation-name: change-color;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.54, 0.75, 0.4, 0.61);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  /* color: hsl(277, 64%, 61%); */
+}
+
+.container .text .description {
+  font-family: "Inter";
+  font-weight: 400;
+  color: hsla(0, 0%, 100%, 0.75);
+  margin-top: -60px;
+  font-size: 17px;
+  letter-spacing: 0px;
+  line-height: 30px;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.container .text .description:hover {
+  letter-spacing: 2px;
+}
+
+.container .text .ctq {
+  width: 470px;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.container .image {
+  background-image: url(images/image-header-desktop.jpg);
+  width: 500px;
+  height: 446px;
+}
+.container .image .image-overlay {
+  width: 540px;
+  height: 446px;
+  animation-name: change-overlay-color;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  /* background-color: hsl(277, 91%, 32%, 0.5); */
+}
+
+.swiper-bottom {
+  width: 180px;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 40px;
+  animation-name: swiper-up;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(0.29, 0.61, 0.54, 0.8);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.swiper-up {
+  width: 180px;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 40px;
+  animation-name: swiper-down;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(0.29, 0.61, 0.54, 0.8);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.swiper-left {
+  width: 5px;
+  height: 180px;
+  background-color: white;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  border-radius: 40px;
+  animation-name: swiper-right;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(0.29, 0.61, 0.54, 0.8);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.swiper-right {
+  width: 5px;
+  height: 180px;
+  background-color: white;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translatey(-50%);
+  border-radius: 40px;
+  animation-name: swiper-left;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: cubic-bezier(0.29, 0.61, 0.54, 0.8);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes swiper-left {
+  0% {
+  }
+
+  20% {
+    right: 10px;
+  }
+
+  100% {
+    right: 20px;
+  }
+}
+
+@keyframes swiper-right {
+  0% {
+  }
+
+  30% {
+    left: 10px;
+  }
+
+  100% {
+    left: 20px;
+  }
+}
+
+@keyframes swiper-down {
+  0% {
+  }
+
+  40% {
+    top: 10px;
+  }
+
+  100% {
+    top: 20px;
+  }
+}
+
+@keyframes swiper-up {
+  0% {
+  }
+  50% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: 20px;
+  }
+}
+
+@keyframes change-overlay-color {
+  0% {
+    background-color: hsla(64, 48%, 39%, 0.5);
+  }
+
+  100% {
+    background-color: hsl(277, 91%, 32%, 0.5);
+  }
+}
+
+@keyframes change-color {
+  0% {
+    color: hsl(0, 0%, 100%);
+  }
+  100% {
+    color: hsl(277, 64%, 61%);
+  }
+}
+
+/*very-small(mobile)*/
+
+@media (max-width: 767px) {
+  .container {
+    position: absolute;
+    top: calc(50% - (446px / 2));
+    left: calc(50% - (280px / 2));
+    border-radius: 10px;
+    background-color: hsl(244, 38%, 16%);
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+    height: 446px;
+    overflow: hidden;
+    transform: perspective(0px) translate3d(0, 0, 0);
+    transform-origin: center;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .container .image {
+    background-image: none;
+    position: absolute;
+    left: 280px;
+  }
+
+  .container .text {
+    width: 280px;
+  }
+  .heading,
+  .description,
+  .ctq {
+    padding: 0 10px 0 10px;
+    margin: 10px 20px 10px 20px;
+  }
+  .container .text .heading {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 10px;
+  }
+
+  .container .text .description {
+    font-family: "Inter";
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-size: 15px;
+    letter-spacing: 0px;
+    line-height: 20px;
+  }
+
+  .container .text .ctq {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container .text .ctq div h2 {
+    font-size: 20px;
+  }
+
+  .container .text .ctq div p {
+    font-size: 11px;
+  }
+}
+
+/*small*/
+
+@media (min-width: 768px) {
+  .container {
+    position: absolute;
+    top: calc(50% - (446px / 2));
+    left: calc(50% - (750px / 2));
+    border-radius: 10px;
+    background-color: hsl(244, 38%, 16%);
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    height: 446px;
+    overflow: hidden;
+    transform: perspective(0px) translate3d(0, 0, 0);
+    transform-origin: center;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .container .text .heading {
+    font-family: "Inter";
+    font-weight: 700;
+  }
+
+  .container .text .description {
+    font-family: "Inter";
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-top: -40px;
+    font-size: 17px;
+    letter-spacing: 0px;
+    line-height: 20px;
+  }
+}
+
+/*mediam*/
+
+@media (min-width: 992px) {
+  .container {
+    position: absolute;
+    top: calc(50% - (446px / 2));
+    left: calc(50% - (970px / 2));
+    border-radius: 10px;
+    background-color: hsl(244, 38%, 16%);
+    display: flex;
+    justify-content: space-between;
+    width: 970px;
+    height: 446px;
+    overflow: hidden;
+    transform: perspective(0px) translate3d(0, 0, 0);
+    transform-origin: center;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .container .text .heading {
+    font-family: "Inter";
+    font-weight: 700;
+  }
+
+  .container .text .description {
+    font-family: "Inter";
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-top: -40px;
+    font-size: 17px;
+    letter-spacing: 0px;
+    line-height: 20px;
+  }
+}
+
+/*large*/
+
+@media (min-width: 1200px) {
+  .container {
+    position: absolute;
+    top: calc(50% - (446px / 2));
+    left: calc(50% - (1050px / 2));
+    border-radius: 10px;
+    background-color: hsl(244, 38%, 16%);
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+    height: 446px;
+    overflow: hidden;
+    transform: perspective(0px) translate3d(0, 0, 0);
+    transform-origin: center;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .container .text .heading {
+    font-family: "Inter";
+    font-weight: 700;
+  }
+
+  .container .text .description {
+    font-family: "Inter";
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-top: -60px;
+    font-size: 17px;
+    letter-spacing: 0px;
+    line-height: 30px;
+  }
+  .ctq {
+    padding: 0 100px 0 45px;
+    margin: 0 0px 0 0px;
+  }
+}
